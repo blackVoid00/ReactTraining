@@ -1,7 +1,12 @@
 import './app.css'
 import {useEffect, useState} from 'react'
-
+import ChildC from './ChildC';
 function App() {
+  const [divCol,setDivCol]=useState()
+  
+  const getColor=(color)=>{
+    setDivCol(color)
+  }
   const [price,setPrice]=useState(0)
   const [price1,setPrice1]=useState(0)
   const [price2,setPrice2]=useState(0)
@@ -142,6 +147,16 @@ return (
   }
     </>
    )})} */}
+ 
+
+  
+   
+     <div className="App" style={{backgroundColor:`${divCol}`}}>
+    </div>
+    <br></br>
+    <ChildC getColor={getColor}></ChildC>
+   
+
    </div>
 )
 }
